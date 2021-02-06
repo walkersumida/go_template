@@ -1,0 +1,13 @@
+version: '3'
+services:
+  go_template:
+    environment:
+      - GOOS=darwin
+      - GOARCH=amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: sh /home/start_app.sh
+    volumes:
+      - .:/home
+      - ./go:/go
